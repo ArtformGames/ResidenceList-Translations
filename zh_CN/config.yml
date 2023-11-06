@@ -1,0 +1,262 @@
+# ResidenceList
+
+# 适用插件版本：1.0.0 (https://github.com/ArtformGames/ResidenceList/releases/tag/1.0.0)
+# 插件作者: ArtformGames | CarmJos (https://github.com/ArtformGames)
+# 项目地址: https://github.com/ArtformGames/ResidenceList
+
+# 简体中文语言版本：1.0.0
+# 简体中文语言工作：MingGRE
+# 语言项目地址：https://github.com/ArtformGames/ResidenceList-Translations
+
+# 调试模式
+# 用于在控制台输出插件运行详细信息
+debug: false
+
+# 数据统计设置-bStats
+# 这个选项用于帮助开发者统计插件使用情况, 并且几乎完全不会影响服务器性能
+# 您可以在 "plugins/bStats" 文件夹下修改配置关闭所有插件的bStats统计
+# 当然您可以在这里单独关闭本插件的bStats统计
+metrics: true
+
+# 检查更新开关
+# 这个选项用于帮助您检查本插件是否存在更新
+# 不想要此功能请设置为 false 
+# 检查条目需要进行联网操作，此操作是异步执行的不会直接影响服务器性能
+check-update: true
+
+# 图标配置
+icon:
+  # 单个领地详细
+  info:
+    # 物品ID
+    material: GRASS_BLOCK
+    # 显示名称
+    name: '&7# &f%(name)'
+    lore:
+    - '{  &f&o}#description#{1,1}'
+    - '&7主人: &f%(owner)'
+    - '&7规模: &f%(size) &7方块'
+    - '&7成员: &f%(members)'
+    - '&7评分: &a%(likes) &7赞, &c%(dislikes) &7踩.'
+    - '#click-lore#{1,0}'
+  # 菜单空位装饰
+  empty:
+    material: BLACK_STAINED_GLASS_PANE
+    name: '&7  '
+  # 评分
+  rate:
+    # 赞
+    like:
+      material: PLAYER_HEAD
+      name: '&7来自 &f%(owner)'
+      lore:
+      - '{&7-  &f&o}#comment#{1,1}'
+      - '&7评价于 %(date)'
+      - '&7这位玩家对此领地表示 &a&l赞'
+      - '#click-lore#{1,0}'
+    # 踩  
+    dislike:
+      material: PLAYER_HEAD
+      name: '&7From &f%(owner)'
+      lore:
+      - '{  &f&o}#comment#{1}'
+      - '&7'
+      - '&7评价于 %(date)'
+      - '&7这位玩家对此领地表示 &c&l踩'
+      - '#click-lore#{1,0}'
+  # 页码    
+  page:
+    # 上一页
+    previous-page:
+      material: ARROW
+      name: '&f上一页'
+      lore:
+      - ' '
+      - '  &e左键点击 &7| &f查看上一页'
+      - '  &e右键点击 &7| &f查看第一页'
+      - ' '
+    # 首页(没有上一页)  
+    no-previous-page:
+      material: ARROW
+      name: '&f这是第一页'
+      lore:
+      - ' '
+      - '&f  不能再往前翻了'
+      - ' '
+    # 下一页  
+    next-page:
+      material: ARROW
+      name: '&f下一页'
+      lore:
+      - ' '
+      - '  &e左键点击 &7| &f查看下一页'
+      - '  &e右键点击 &7| &f查看最后一页'
+      - ' '
+    # 末页(没有下一页)  
+    no-next-page:
+      material: ARROW
+      name: '&f这是最后一页'
+      lore:
+      - ' '
+      - '&f  不能再往后翻了'
+      - ' '
+
+      
+# 操作界面配置
+gui:
+  # 开启声音
+  open-sound: ENTITY_EXPERIENCE_ORB_PICKUP
+  # 点击声音
+  click-sound: UI_BUTTON_CLICK
+  # 领地列表
+  list:
+    # 标题
+    title: '&a&l领地列表 &7(&f%(current_page)&7/%(total_page))'
+    items:
+      all:
+        material: CHEST
+        name: '&a&l所有领地'
+        lore:
+        - '&7'
+        - '&7所有公开的领地均已展示'
+        - '&7'
+        - '&e&l ▶ &l左键点击 &8|&f 查看私人领地'
+      owned:
+        material: PLAYER_HEAD
+        name: '&7领地主人>> &f%(owner)'
+        lore:
+        - '&7'
+        - '&e&l ▶ &l左键点击 &8|&f 查看所有领地'
+    additional-lore:
+      # 普通领地
+      normal:
+      - '&e&l ▶ &l左键点击 &8|&f 查看详细信息'
+      - '&e&l ▶ &l按下Ｑ键 &8|&f 置顶/取消置顶领地'
+      # 可传送的领地
+      teleportable:
+      - '&e&l ▶ &l左键点击 &8|&f 查看详细信息'
+      - '&e&l ▶ &l右键点击 &8|&f 传送到领地'
+      - '&e&l ▶ &l按下Ｑ键 &8|&f 置顶/取消置顶领地'
+  info:
+    title: '&a&l详细信息 &7#&f%(name)'
+    items:
+      back:
+        material: REDSTONE_TORCH
+        name: '&c返回'
+      owner:
+        material: PLAYER_HEAD
+        name: '&7领地主人>> &f%(owner)'
+        lore:
+        - '&7'
+        - '&e&l ▶ &l左键点击 &8|&f 查看该玩家所有领地'
+      teleport-to:
+        material: ENDER_EYE
+        name: '&d传送到领地'
+        lore:
+        - '&7'
+        - '&7领地坐标:'
+        - '&f%(world)&7@&f%(x)&7,&f%(y),&f%(z)'
+        - ''
+        - '&e&l ▶ &l左键点击 &8|&f 传送到领地'
+      teleport-disabled:
+        material: ENDER_EYE
+        name: '&d&m传送到领地'
+        lore:
+        - '&7'
+        - '&c这个领地暂未开放传送.'
+        - ''
+      rate:
+        material: WRITABLE_BOOK
+        name: '&e评分 & 评价'
+        lore:
+        - '&7'
+        - '&7你可以对该领地进行评价'
+        - '&7'
+        - '&e&l ▶ &l左键点击 &8|&f &a赞&f该领地并评价'
+        - '&e&l ▶ &l左键点击 &8|&f &c踩&f该领地并评价'
+      rated:
+        material: WRITTEN_BOOK
+        name: '&e评分 & 评价'
+        lore:
+        - '&7'
+        - '&7你已对该领地进行了评价::'
+        - '{&7- &f&o}#comment#'
+        - '&7评价时间 &f%(date)'
+        - ' '
+        - '&7你仍然可以更新你的评价'
+        - '&7'
+        - '&e&l ▶ &l左键点击 &8|&f &a赞&f该领地并评价'
+        - '&e&l ▶ &l左键点击 &8|&f &c踩&f该领地并评价'
+      empty:
+        material: BARRIER
+        name: '&7无评价'
+        lore:
+        - '&7目前暂时没有评价'
+    additional-lore:
+      click:
+      - '&e&l ▶ &l左键点击 &8|&f 置顶/取消置顶领地'
+
+  # 玩家领地编辑页面    
+  manage:
+    title: '&a&l详细信息 &7#&f%(name)'
+    items:
+      back:
+        material: REDSTONE_TORCH
+        name: '&c返回'
+      teleport:
+        material: ENDER_EYE
+        name: '&d&l传送'
+        lore:
+        - '&7'
+        - '&7领地坐标:'
+        - '&f%(world)&7@&f%(x)&7,&f%(y),&f%(z)'
+        - ''
+        - '&e&l ▶ &l左键点击 &8|&f 传送到领地传送点'
+        - '&e&l ▶ &l右键点击 &8|&f 设置当前所处位置为此领地传送点'
+      information:
+        material: OAK_SIGN
+        name: '&e&l编辑领地信息'
+        lore:
+        - ''
+        - '&e&l ▶ &l左键点击 &8|&f 设置领地昵称(别名)'
+        - '&e&l ▶ &l右键点击 &8|&f 设置领地描述'
+        - '&e&l ▶ &l中键点击 &8|&f 设置领地图标'
+      public:
+        material: LIME_DYE
+        name: '&7当前状态: &a&l公开'
+        lore:
+        - ' '
+        - '&7现在所有的玩家都可以在公开列表内看到该领地.'
+        - ' '
+        - '&e&l ▶ &l左键点击 &8|&f 切换至 &c&l私有'
+      private:
+        material: GRAY_DYE
+        name: '&7当前状态: &c&l私有'
+        lore:
+        - ' '
+        - '&7现在只有你能够看到此领地'
+        - '&7其他玩家无法在公开列表看到该领地'
+        - ' '
+        - '&a ▶ Click &8|&f Change to &a&lPublic'
+      empty:
+        material: BARRIER
+        name: '&7无评论'
+        lore:
+        - '&7目前暂无评论'
+    additional-lore:
+      click:
+      - '&e&l ▶ &l左键点击 &8|&f 置顶/取消置顶'
+      - '&e&l ▶ &l右键点击 &8|&f 设置领地昵称(别名)'
+      - '&e&l ▶ &l中键点击 &8|&f 编辑领地图标'
+      remove:
+      - '&e&l ▶ &l左键点击 &8|&f 删除该条评论 &c(管理员权限)'
+  select:
+    title: '&a&l请选择一个领地图标'
+    items:
+      select:
+        material: LIME_DYE
+        name: '&7在背包里点击物品'
+        lore:
+        - ' '
+        - '&7请在背包里点击物品图标'
+        - ' '

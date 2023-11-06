@@ -1,0 +1,67 @@
+# ResidenceList
+
+# 适用插件版本：1.0.0 (https://github.com/ArtformGames/ResidenceList/releases/tag/1.0.0)
+# 插件作者: ArtformGames | CarmJos (https://github.com/ArtformGames)
+# 项目地址: https://github.com/ArtformGames/ResidenceList
+
+# 简体中文语言版本：1.0.0
+# 简体中文语言工作：MingGRE
+# 语言项目地址：https://github.com/ArtformGames/ResidenceList-Translations
+
+# 加载失败
+load-failed:
+- '&c&l抱歉! &fResidence插件数据加载失败，请检查并重试!'
+
+# 置顶
+pin:
+  # 音效
+  sound: BLOCK_ANVIL_PLACE
+  message:
+  - '&f你成功置顶了领地 &e%(residence)&f!'
+
+# 取消置顶
+unpin:
+  sound: BLOCK_ANVIL_BREAK:0.5
+  message:
+  - '&f你取消置顶了领地 &e%(residence)&f!'
+
+# 传送
+teleport:
+  sound: ENTITY_ENDERMAN_TELEPORT:0.5
+  no-location:
+  - '&c&l抱歉! &f你暂时无法传送到领地 &e%(residence) '
+
+# 评价
+comment:
+  ask-sound: ENTITY_CHICKEN_EGG:0.5
+  yes-sound: ENTITY_VILLAGER_YES:0.5
+  no-sound: ENTITY_VILLAGER_NO:0.5
+  notify:
+  - '&f你正在评价领地 &e%(residence)&f,请在聊天栏输入你的评价'
+  - '&f你可以输入 ''&e#cancel&f'' 来取消评价'
+
+# 编辑
+edit:
+  # 编辑音效
+  edit-sound: ENTITY_CHICKEN_EGG:0.5
+  # 成功操作音效
+  success-sound: BLOCK_LEVER_CLICK:0.5
+  # 失败操作音效
+  failed-sound: ENTITY_VILLAGER_NO:0.5
+  name:
+  - '&f你正在为领地 &e%(residence)&f设置别名, 请在聊天栏输入'
+  - '&f别名长度 &e不能超过 16 个字符&f.'
+  - '&f你可以输入 ''&e#cancel&f'' 来取消操作'
+  description:
+  - '&f你正在为领地 &e%(residence)&f编辑描述, 请在聊天栏输入'
+  - '&f你可以使用 ''&e\n&f'' 进行换行.'
+  - '&f你也可以输入 ''&e#cancel&f'' 来取消操作'
+  name-too-long:
+  - '&c&l抱歉! &f领地别名过长,'
+  - '&f注意别名长度 &e不能超过 16 个字符&f'
+  name-updated:
+  - '&f成功为领地 &e%(residence)&f 更新了别名!'
+  description-updated:
+  - '&f成功为领地 &e%(residence)&f 更新了描述!'
+  icon-updated:
+  - '&f成功为领地 &e%(residence)&f 更新了图标!'
