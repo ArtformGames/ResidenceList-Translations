@@ -1,11 +1,11 @@
 # ResidenceList
 
 # 适用插件版本：1.0.0 (https://github.com/ArtformGames/ResidenceList/releases/tag/1.0.0)
-# 插件作者: ArtformGames | CarmJos (https://github.com/ArtformGames)
+# 插件作者: ArtformGames, CarmJos (https://github.com/ArtformGames)
 # 项目地址: https://github.com/ArtformGames/ResidenceList
 
-# 简体中文语言版本：1.0.0
-# 简体中文语言工作：MingGRE
+# 简体中文语言版本：1.0.0.1
+# 简体中文语言工作：MingGRE, Sraconni
 # 语言项目地址：https://github.com/ArtformGames/ResidenceList-Translations
 
 # 调试模式
@@ -23,6 +23,15 @@ metrics: true
 # 不想要此功能请设置为 false 
 # 检查条目需要进行联网操作，此操作是异步执行的不会直接影响服务器性能
 check-update: true
+
+settings:
+  # 每一行文字数量
+  letters-pre-line: 35
+  # 禁用的图标
+  blocked-icon-types:
+  - CHEST
+  - CHAIN
+  - REDSTONE
 
 # 图标配置
 icon:
@@ -101,7 +110,6 @@ icon:
       - '&f  不能再往后翻了'
       - ' '
 
-      
 # 操作界面配置
 gui:
   # 开启声音
@@ -237,7 +245,7 @@ gui:
         - '&7现在只有你能够看到此领地'
         - '&7其他玩家无法在公开列表看到该领地'
         - ' '
-        - '&a ▶ Click &8|&f Change to &a&lPublic'
+        - '&e&l ▶ &l左键点击 &8|&f 切换至 &a&l公开'
       empty:
         material: BARRIER
         name: '&7无评论'
@@ -246,10 +254,33 @@ gui:
     additional-lore:
       click:
       - '&e&l ▶ &l左键点击 &8|&f 置顶/取消置顶'
-      - '&e&l ▶ &l右键点击 &8|&f 设置领地昵称(别名)'
-      - '&e&l ▶ &l中键点击 &8|&f 编辑领地图标'
       remove:
       - '&e&l ▶ &l左键点击 &8|&f 删除该条评论 &c(管理员权限)'
+
+  # 管理员操作界面配置   
+  admin:
+    title: '&a&l领地列表 &7(&f%(current_page)&7/%(total_page))'
+    items:
+      all:
+        material: CHEST
+        name: '&a&l所有领地'
+        lore:
+        - '&7'
+        - '&7所有公开的领地均已展示'
+        - '&7'
+        - '&e&l ▶ &l左键点击 &8|&f 查看私人领地'
+      owned:
+        material: PLAYER_HEAD
+        name: '&7领地主人>> &f%(owner)'
+        lore:
+        - '&7'
+        - '&e&l ▶ &l左键点击 &8|&f 查看所有领地'
+    additional-lore:
+      normal:
+      - '&e&l ▶ &l左键点击 &8|&f 查看详细信息'
+      teleportable:
+      - '&e&l ▶ &l左键点击 &8|&f 查看详细信息'
+      - '&e&l ▶ &l右键点击 &8|&f 传送到领地'
   select:
     title: '&a&l请选择一个领地图标'
     items:
