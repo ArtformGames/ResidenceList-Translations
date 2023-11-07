@@ -1,0 +1,88 @@
+
+
+load-failed:
+- '&c&lSorry! &fBut your residence data failed to load, please rejoin!'
+
+command:
+  user:
+  - '&e&lResidenceList &fCommands &7(/reslist)'
+  - '&8#&f open &e[player]'
+  - '&8-&7 Open the residence list gui.'
+  - '&8#&f info &e<residence>'
+  - '&8-&7 Display the residence info'
+  - '&8#&f edit &e<residence>'
+  - '&8-&7 Open the residence edit gui'
+  admin:
+  - '&e&lResidenceList &fAdmin Commands &7(/reslistadmin)'
+  - '&8#&f open &e[player]'
+  - '&8-&7 Open the admin manage GUI.'
+  - '&8#&f edit &e<residence>'
+  - '&8-&7 Open the residence edit gui'
+  - '&8#&f reload'
+  - '&8-&7 Reload the configuration file.'
+  no-permission:
+  - '&c&lSorry! &fBut you dont have enough permissions to do that!'
+  only-player:
+  - '&c&lSorry! &fBut this command only can be executed by a player!'
+  not-exists:
+  - '&c&lSorry! &fThere is currently no residence with name &e#%(residence) &f!'
+  unknown-player:
+  - '&c&lSorry! &fThere is currently no player named &e#%(name) &f!'
+  not-owner:
+  - '&c&lSorry! &fBut you are not the owner of residence &e#%(residence) &f!'
+
+reload:
+  start:
+  - '&fReloading the plugin configurations...'
+  success:
+  - '&a&lSuccess! &fThe plugin configurations has been reloaded, cost &a%(time)&fms.'
+  failed:
+  - '&c&lFailed! &fThe plugin configurations failed to reload.'
+
+pin:
+  sound: BLOCK_ANVIL_PLACE
+  message:
+  - '&fYou have successfully pinned the residence &e%(residence)&f!'
+
+unpin:
+  sound: BLOCK_ANVIL_BREAK:0.5
+  message:
+  - '&fYou have unpinned the residence &e%(residence)&f!'
+
+teleport:
+  sound: ENTITY_ENDERMAN_TELEPORT:0.5
+  no-location:
+  - '&c&lSorry! &fBut you cannot teleport to &e%(residence) &fyet!'
+
+comment:
+  ask-sound: ENTITY_CHICKEN_EGG:0.5
+  yes-sound: ENTITY_VILLAGER_YES:0.5
+  no-sound: ENTITY_VILLAGER_NO:0.5
+  notify:
+  - '&fYou are commenting for residence &e%(residence)&f, please enter your comment
+    in chat.'
+  - '&fYou can enter ''&e#cancel&f'' to cancel this operation.'
+
+edit:
+  edit-sound: ENTITY_CHICKEN_EGG:0.5
+  success-sound: BLOCK_LEVER_CLICK:0.5
+  failed-sound: ENTITY_VILLAGER_NO:0.5
+  name:
+  - '&fYou are setting up nickname for residence &e%(residence)&f, please enter in chat.'
+  - '&fRemember that a nickname should be &eless than 16 characters&f.'
+  - '&fYou can enter ''&e#cancel&f'' to cancel this operation.'
+  description:
+  - '&fYou are editing description for residence &e%(residence)&f, please enter in chat.'
+  - '&fRemember that you can use ''&e\n&f'' to wrap lines.'
+  - '&fYou can enter ''&e#cancel&f'' to cancel this operation.'
+  name-too-long:
+  - '&c&lSorry! &fBut the nickname that you input is too long,'
+  - '&fRemember that a nickname should be &eless than 16 characters&f.'
+  name-updated:
+  - '&fYou have successfully updated the nickname of residence &e%(residence)&f!'
+  description-updated:
+  - '&fYou have successfully updated the description of residence &e%(residence)&f!'
+  icon-updated:
+  - '&fYou have successfully updated the icon of residence &e%(residence)&f!'
+  icon-blocked:
+  - '&fYou cannot select this material as residence icon!'

@@ -1,0 +1,257 @@
+
+
+debug: false
+
+# Statistics Settings
+# This option is used to help developers count plug-in versions and usage, and it will never affect performance and user experience.
+# Of course, you can also choose to turn it off here for this plugin,
+# or turn it off for all plugins in the configuration file under "plugins/bStats".
+metrics: true
+
+# Check update settings
+# This option is used by the plug-in to determine whether to check for updates.
+# If you do not want the plug-in to check for updates and prompt you, you can choose to close.
+# Checking for updates is an asynchronous operation that will never affect performance and user experience.
+check-update: true
+
+settings:
+  letters-pre-line: 35
+  blocked-icon-types:
+  - CHEST
+  - CHAIN
+  - REDSTONE
+
+icon:
+  info:
+    material: GRASS_BLOCK
+    name: '&7# &f%(name)'
+    lore:
+    - '{  &f&o}#description#{1,1}'
+    - '&7Owner: &f%(owner)'
+    - '&7Size: &f%(size) &7block(s)'
+    - '&7Members: &f%(members)'
+    - '&7Rates: &a%(likes) &7likes, &c%(dislikes) &7dislikes.'
+    - '#click-lore#{1,0}'
+  empty:
+    material: BLACK_STAINED_GLASS_PANE
+    name: '&7  '
+  rate:
+    like:
+      material: PLAYER_HEAD
+      name: '&7From &f%(owner)'
+      lore:
+      - '{&7-  &f&o}#comment#{1,1}'
+      - '&7Commented at %(date),'
+      - '&7This user &arecommended &7this residence.'
+      - '#click-lore#{1,0}'
+    dislike:
+      material: PLAYER_HEAD
+      name: '&7From &f%(owner)'
+      lore:
+      - '{  &f&o}#comment#{1}'
+      - '&7'
+      - '&7Commented at %(date)'
+      - '&7This user &cnot recommended &7this residence.'
+      - '#click-lore#{1,0}'
+  page:
+    previous-page:
+      material: ARROW
+      name: '&fPrevious page'
+      lore:
+      - ' '
+      - '&f  Left click to view the previous page.'
+      - '&f  Right click to view the first page.'
+      - ' '
+    no-previous-page:
+      material: ARROW
+      name: '&fPrevious page'
+      lore:
+      - ' '
+      - '&f  There is no previous page.'
+      - ' '
+    next-page:
+      material: ARROW
+      name: '&fNext page'
+      lore:
+      - ' '
+      - '&f  Left click to view the next page.'
+      - '&f  Right click to view the last page.'
+      - ' '
+    no-next-page:
+      material: ARROW
+      name: '&fNext page'
+      lore:
+      - ' '
+      - '&f  There is no next page.'
+      - ' '
+
+gui:
+  open-sound: ENTITY_EXPERIENCE_ORB_PICKUP
+  click-sound: UI_BUTTON_CLICK
+  list:
+    title: '&a&lResidence list &7(&f%(current_page)&7/%(total_page))'
+    items:
+      all:
+        material: CHEST
+        name: '&a&lAll residences'
+        lore:
+        - '&7'
+        - '&7Now all residences are displayed.'
+        - '&7'
+        - '&a ▶ Click &8|&f See only personal residences'
+      owned:
+        material: PLAYER_HEAD
+        name: '&7Residence owned by &f%(owner)'
+        lore:
+        - '&7'
+        - '&a ▶ Click &8|&f See all residences'
+    additional-lore:
+      normal:
+      - '&a ▶ Click &8|&f View information'
+      - '&a ▶ Drop &8|&f Pin/Unpin residence'
+      teleportable:
+      - '&a ▶ LClick &8|&f View information'
+      - '&a ▶ RClick &8|&f Teleport to residence'
+      - '&a ▶  Drop  &8|&f Pin/Unpin residence'
+  info:
+    title: '&a&lDetails &7#&f%(name)'
+    items:
+      back:
+        material: REDSTONE_TORCH
+        name: '&cBack'
+      owner:
+        material: PLAYER_HEAD
+        name: '&7Residence owned by &f%(owner)'
+        lore:
+        - '&7'
+        - '&a ▶ Click &8|&f See all his residences'
+      teleport-to:
+        material: ENDER_EYE
+        name: '&dTeleport to residence'
+        lore:
+        - '&7'
+        - '&7Residence location:'
+        - '&f%(world)&7@&f%(x)&7,&f%(y),&f%(z)'
+        - ''
+        - '&a ▶ Click &8|&f Teleport to residence.'
+      teleport-disabled:
+        material: ENDER_EYE
+        name: '&d&mTeleport'
+        lore:
+        - '&7'
+        - '&cThis residence cannot be teleported to.'
+        - ''
+      rate:
+        material: WRITABLE_BOOK
+        name: '&eRate && Comment'
+        lore:
+        - '&7'
+        - '&7You can rate and comment on this residence.'
+        - '&7'
+        - '&a ▶ LClick &8|&f Like && comment.'
+        - '&a ▶ RClick &8|&f Dislike && comment.'
+      rated:
+        material: WRITTEN_BOOK
+        name: '&eRate && Comment'
+        lore:
+        - '&7'
+        - '&7You have already rated and commented:'
+        - '{&7- &f&o}#comment#'
+        - '&7Rate at &f%(date)'
+        - ' '
+        - '&7You can still update your comment.'
+        - '&7'
+        - '&a ▶ LClick &8|&f Like && comment.'
+        - '&a ▶ RClick &8|&f Dislike && comment.'
+      empty:
+        material: BARRIER
+        name: '&7Empty'
+        lore:
+        - '&7There are no comments yet.'
+    additional-lore:
+      click:
+      - '&a ▶ Click &8|&f Pin/Unpin residence'
+  manage:
+    title: '&a&lDetails &7#&f%(name)'
+    items:
+      back:
+        material: REDSTONE_TORCH
+        name: '&cBack'
+      teleport:
+        material: ENDER_EYE
+        name: '&d&lTeleport'
+        lore:
+        - '&7'
+        - '&7Residence location:'
+        - '&f%(world)&7@&f%(x)&7,&f%(y),&f%(z)'
+        - ''
+        - '&a ▶ LClick &8|&f Teleport to residence.'
+        - '&a ▶ RClick &8|&f Set current location for teleportation.'
+      information:
+        material: OAK_SIGN
+        name: '&e&lEdit information'
+        lore:
+        - ''
+        - '&a ▶ LClick &8|&f Set residence''s nickname.'
+        - '&a ▶ RClick &8|&f Set residence''s description.'
+        - '&a ▶ Middle &8|&f Edit residence''s icon'
+      public:
+        material: LIME_DYE
+        name: '&7Current: &a&lPublic'
+        lore:
+        - ' '
+        - '&7Now all players can see this residence in list.'
+        - ' '
+        - '&a ▶ Click &8|&f Change to &c&lPrivate'
+      private:
+        material: GRAY_DYE
+        name: '&7Current: &c&lPrivate'
+        lore:
+        - ' '
+        - '&7Now only you can see this residence in list.'
+        - '&7Others can''t see it.'
+        - ' '
+        - '&a ▶ Click &8|&f Change to &a&lPublic'
+      empty:
+        material: BARRIER
+        name: '&7Empty'
+        lore:
+        - '&7There are no comments yet.'
+    additional-lore:
+      click:
+      - '&a ▶ LClick &8|&f Pin/Unpin residence'
+      remove:
+      - '&a ▶ LClick &8|&f Delete this comment &c(ADMIN)'
+  admin:
+    title: '&a&lResidence list &7(&f%(current_page)&7/%(total_page))'
+    items:
+      all:
+        material: CHEST
+        name: '&a&lAll residences'
+        lore:
+        - '&7'
+        - '&7Now all residences are displayed.'
+        - '&7'
+        - '&a ▶ Click &8|&f See only personal residences'
+      owned:
+        material: PLAYER_HEAD
+        name: '&7Residence owned by &f%(owner)'
+        lore:
+        - '&7'
+        - '&a ▶ Click &8|&f See all residences'
+    additional-lore:
+      normal:
+      - '&a ▶ Click &8|&f View information'
+      teleportable:
+      - '&a ▶ LClick &8|&f View information'
+      - '&a ▶ RClick &8|&f Teleport to residence'
+  select:
+    title: '&a&lPlease select icon'
+    items:
+      select:
+        material: LIME_DYE
+        name: '&7Click items in backpack'
+        lore:
+        - ' '
+        - '&7Please click items in backpack to select icon.'
+        - ' '
