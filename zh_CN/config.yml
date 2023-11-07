@@ -4,7 +4,7 @@
 # 插件作者: ArtformGames, CarmJos (https://github.com/ArtformGames)
 # 项目地址: https://github.com/ArtformGames/ResidenceList
 
-# 简体中文语言版本：1.0.0.1
+# 简体中文语言版本：1.0.0.2
 # 简体中文语言工作：MingGRE, Sraconni
 # 语言项目地址：https://github.com/ArtformGames/ResidenceList-Translations
 
@@ -181,7 +181,7 @@ gui:
         - '&7你可以对该领地进行评价'
         - '&7'
         - '&e&l ▶ &l左键点击 &8|&f &a赞&f该领地并评价'
-        - '&e&l ▶ &l左键点击 &8|&f &c踩&f该领地并评价'
+        - '&e&l ▶ &l右键点击 &8|&f &c踩&f该领地并评价'
       rated:
         material: WRITTEN_BOOK
         name: '&e评分 & 评价'
@@ -194,7 +194,7 @@ gui:
         - '&7你仍然可以更新你的评价'
         - '&7'
         - '&e&l ▶ &l左键点击 &8|&f &a赞&f该领地并评价'
-        - '&e&l ▶ &l左键点击 &8|&f &c踩&f该领地并评价'
+        - '&e&l ▶ &l右键点击 &8|&f &c踩&f该领地并评价'
       empty:
         material: BARRIER
         name: '&7无评价'
