@@ -4,7 +4,7 @@
 # 插件作者: ArtformGames, CarmJos (https://github.com/ArtformGames)
 # 项目地址: https://github.com/ArtformGames/ResidenceList
 
-# 简体中文语言版本：1.0.1
+# 简体中文语言版本：1.0.1.1
 # 简体中文语言工作：MingGRE, Sraconni
 # 语言项目地址：https://github.com/ArtformGames/ResidenceList-Translations
 
@@ -25,6 +25,8 @@ metrics: true
 check-update: true
 
 settings:
+  # 领地默认状态 (公开 / 非公开)
+  default-status: true
   # 每一行文字数量
   letters-pre-line: 35
   # 禁用的图标
