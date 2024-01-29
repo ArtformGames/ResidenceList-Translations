@@ -73,7 +73,7 @@ edit:
   - '&fYou can enter ''&e#cancel&f'' to cancel this operation.'
   description:
   - '&fYou are editing description for residence &e%(residence)&f, please enter in chat.'
-  - '&fRemember that you can use ''&e\n&f'' to wrap lines.'
+  - '&fRemember that you can use ''&e\\n&f'' to wrap lines.'
   - '&fYou can enter ''&e#cancel&f'' to cancel this operation.'
   name-too-long:
   - '&c&lSorry! &fBut the nickname that you input is too long,'

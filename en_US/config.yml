@@ -15,6 +15,8 @@ metrics: true
 check-update: true
 
 settings:
+  # Default residence status (Public / Private)
+  default-status: true
   letters-pre-line: 35
   blocked-icon-types:
   - CHEST
@@ -105,6 +107,45 @@ gui:
         lore:
         - '&7'
         - '&a ▶ Click &8|&f See all residences'
+      sort-by-ratings:
+        material: LADDER
+        name: '&fSort by &e&lRATINGS %(order)'
+        lore:
+        - '&7'
+        - '&fSort order: %(order)'
+        - '&fSort functions:'
+        - '&7 &a➥ &e&lRATINGS'
+        - '&7     &fNAME'
+        - '&7     &fSIZE'
+        - ' '
+        - '&a ▶ LClick &8|&f Switch sort function'
+        - '&a ▶ RClick &8|&f Toggle sort reverse'
+      sort-by-name:
+        material: LADDER
+        name: '&fSort by &2&lNAME %(order)'
+        lore:
+        - '&7'
+        - '&fSort order: %(order)'
+        - '&fSort functions:'
+        - '&7     &fRATINGS'
+        - '&7 &a➥ &2&lNAME'
+        - '&7     &fSIZE'
+        - ' '
+        - '&a ▶ LClick &8|&f Switch sort function'
+        - '&a ▶ RClick &8|&f Toggle sort reverse'
+      sort-by-size:
+        material: LADDER
+        name: '&fSort by &d&lSIZE %(order)'
+        lore:
+        - '&7'
+        - '&fSort order: %(order)'
+        - '&fSort functions:'
+        - '&7     &fRATINGS'
+        - '&7     &fNAME'
+        - '&7  &a➥ &d&lSIZE'
+        - ' '
+        - '&a ▶ LClick &8|&f Switch sort function'
+        - '&a ▶ RClick &8|&f Toggle sort reverse'
     additional-lore:
       normal:
       - '&a ▶ Click &8|&f View information'
