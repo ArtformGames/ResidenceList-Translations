@@ -1,10 +1,10 @@
 # ResidenceList
 
-# 适用插件版本：1.0.0 (https://github.com/ArtformGames/ResidenceList/releases/tag/1.0.0)
+# 适用插件版本：1.1.0+ (https://github.com/ArtformGames/ResidenceList/releases/tag/1.0.0)
 # 插件作者: ArtformGames, CarmJos (https://github.com/ArtformGames)
 # 项目地址: https://github.com/ArtformGames/ResidenceList
 
-# 简体中文语言版本：1.0.0.1
+# 简体中文语言版本：1.0.1
 # 简体中文语言工作：MingGRE, Sraconni
 # 语言项目地址：https://github.com/ArtformGames/ResidenceList-Translations
 
@@ -95,7 +95,7 @@ edit:
   - '&f你可以输入 ''&e#cancel&f'' 来取消操作'
   description:
   - '&f你正在为领地 &e%(residence)&f编辑描述, 请在聊天栏输入'
-  - '&f你可以使用 ''&e\n&f'' 进行换行.'
+  - '&f你可以使用 ''&e\\n&f'' 进行换行.'
   - '&f你也可以输入 ''&e#cancel&f'' 来取消操作'
   name-too-long:
   - '&c&l抱歉! &f领地别名过长,'

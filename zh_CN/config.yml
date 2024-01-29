@@ -1,10 +1,10 @@
 # ResidenceList
 
-# 适用插件版本：1.0.0 (https://github.com/ArtformGames/ResidenceList/releases/tag/1.0.0)
+# 适用插件版本：1.1.0+ (https://github.com/ArtformGames/ResidenceList/releases/tag/1.0.0)
 # 插件作者: ArtformGames, CarmJos (https://github.com/ArtformGames)
 # 项目地址: https://github.com/ArtformGames/ResidenceList
 
-# 简体中文语言版本：1.0.0.2
+# 简体中文语言版本：1.0.1
 # 简体中文语言工作：MingGRE, Sraconni
 # 语言项目地址：https://github.com/ArtformGames/ResidenceList-Translations
 
@@ -135,6 +135,48 @@ gui:
         lore:
         - '&7'
         - '&e&l ▶ &l左键点击 &8|&f 查看所有领地'
+      #根据领地评分排序
+      sort-by-ratings:
+        material: LADDER
+        name: '&f以 &e&l领地评分 %(order) &f排序'
+        lore:
+        - '&7'
+        - '&f排序权重: %(order)'
+        - '&f当前选择排序方式:'
+        - '&7 &a➥ &e&l领地评分'
+        - '&7     &f领地名称'
+        - '&7     &f领地大小'
+        - ' '
+        - '&e&l ▶ &l左键点击 &8|&f 切换排序方式'
+        - '&e&l ▶ &l右键点击 &8|&f 切换排序权重'
+      #根据领地名称排序
+      sort-by-name:
+        material: LADDER
+        name: '&f以 &2&l领地名称 %(order) &f排序'
+        lore:
+        - '&7'
+        - '&f排序权重: %(order)'
+        - '&f当前选择排序方式:'
+        - '&7     &f领地评分'
+        - '&7 &a➥ &2&l领地名称'
+        - '&7     &f领地大小'
+        - ' '
+        - '&e&l ▶ &l左键点击 &8|&f 切换排序方式'
+        - '&e&l ▶ &l右键点击 &8|&f 切换排序权重'
+      #根据领地大小排序
+      sort-by-size:
+        material: LADDER
+        name: '&f以 &d&l领地大小 %(order) &f排序'
+        lore:
+        - '&7'
+        - '&f排序权重: %(order)'
+        - '&f当前选择排序方式:'
+        - '&7     &f领地评分'
+        - '&7     &f领地名称'
+        - '&7  &a➥ &d&l领地大小'
+        - ' '
+        - '&e&l ▶ &l左键点击 &8|&f 切换排序方式'
+        - '&e&l ▶ &l右键点击 &8|&f 切换排序权重'
     additional-lore:
       # 普通领地
       normal:
@@ -203,7 +245,6 @@ gui:
     additional-lore:
       click:
       - '&e&l ▶ &l左键点击 &8|&f 置顶/取消置顶领地'
-
   # 玩家领地编辑页面    
   manage:
     title: '&a&l详细信息 &7#&f%(name)'
@@ -256,7 +297,6 @@ gui:
       - '&e&l ▶ &l左键点击 &8|&f 置顶/取消置顶'
       remove:
       - '&e&l ▶ &l左键点击 &8|&f 删除该条评论 &c(管理员权限)'
-
   # 管理员操作界面配置   
   admin:
     title: '&a&l领地列表 &7(&f%(current_page)&7/%(total_page))'
