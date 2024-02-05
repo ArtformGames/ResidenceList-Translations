@@ -4,13 +4,13 @@
 # 插件作者: ArtformGames, CarmJos (https://github.com/ArtformGames)
 # 项目地址: https://github.com/ArtformGames/ResidenceList
 
-# 简体中文语言版本：1.0.1
+# 简体中文语言版本：1.0.1.1
 # 简体中文语言工作：MingGRE, Sraconni
 # 语言项目地址：https://github.com/ArtformGames/ResidenceList-Translations
 
 # 加载失败
 load-failed:
-- '&c&lSorry! &fBut your residence data failed to load, please rejoin!'
+- '&c&l抱歉! &f由于你的领地数据加载失败，请尝试重新加入或联系管理员!'
 
 # 指令提示
 command:
@@ -18,18 +18,20 @@ command:
   - '&e&lResidenceList &f指令提示 &7(/reslist)'
   - '&8#&f open &e[玩家]'
   - '&8-&7 打开主页面'
+  - '&8-&7 输入玩家ID可指定打开该玩家的领地页面'
   - '&8#&f info &e<领地名称>'
-  - '&8-&7 查看领地的详细信息'
+  - '&8-&7 查看该领地的详细信息'
   - '&8#&f edit &e<领地名称>'
-  - '&8-&7 打开编辑页面'
+  - '&8-&7 打开领地信息编辑页面'
   admin:
   - '&e&lResidenceList &f管理员指令提示 &7(/reslistadmin)'
   - '&8#&f open &e[玩家]'
-  - '&8-&7 打开管理主界面'
+  - '&8-&7 以管理员身份打开主界面'
+  - '&8-&7 输入玩家ID可指定打开该玩家的领地页面'
   - '&8#&f edit &e<领地名称>'
-  - '&8-&7 打开管理编辑页面'
+  - '&8-&7 以管理员身份打开领地信息编辑页面'
   - '&8#&f reload'
-  - '&8-&7 重新加载配置文件'
+  - '&8-&7 重载配置文件'
   no-permission:
   - '&c&l抱歉! &f你没有权限这样做!'
   only-player:
