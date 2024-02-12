@@ -1,0 +1,298 @@
+
+
+debug: false
+
+# Statistics Settings
+# This option is used to help developers count plug-in versions and usage, and it will never affect performance and user experience.
+# Of course, you can also choose to turn it off here for this plugin,
+# or turn it off for all plugins in the configuration file under "plugins/bStats".
+metrics: true
+
+# Check update settings
+# This option is used by the plug-in to determine whether to check for updates.
+# If you do not want the plug-in to check for updates and prompt you, you can choose to close.
+# Checking for updates is an asynchronous operation that will never affect performance and user experience.
+check-update: true
+
+settings:
+  # Default residence status (Public / Private)
+  default-status: true
+  letters-pre-line: 35
+  blocked-icon-types:
+  - CHEST
+  - CHAIN
+  - REDSTONE
+
+icon:
+  info:
+    material: GRASS_BLOCK
+    name: '&7# &f%(name)'
+    lore:
+    - '{  &f&o}#description#{1,1}'
+    - '&7擁有者: &f%(owner)'
+    - '&7規模: &f%(size) &7方塊'
+    - '&7成員: &f%(members)'
+    - '&7評分: &a%(likes) &7讚, &c%(dislikes) &7倒讚.'
+    - '#click-lore#{1,0}'
+  empty:
+    material: BLACK_STAINED_GLASS_PANE
+    name: '&7  '
+  rate:
+    like:
+      material: PLAYER_HEAD
+      name: '&7來自 &f%(owner)'
+      lore:
+      - '{&7-  &f&o}#comment#{1,1}'
+      - '&7評價於 %(date)'
+      - '&7這位玩家對此領地表示 &a&l讚'
+      - '#click-lore#{1,0}'
+    dislike:
+      material: PLAYER_HEAD
+      name: '&7From &f%(owner)'
+      lore:
+      - '{  &f&o}#comment#{1}'
+      - '&7'
+      - '&7評價於 %(date)'
+      - '&7這位玩家對此領地表示 &c&l倒讚'
+      - '#click-lore#{1,0}'
+  page:
+    previous-page:
+      material: ARROW
+      name: '&f上一頁'
+      lore:
+      - ' '
+      - '  &e左鍵點選 &7| &f查看上一頁'
+      - '  &e右鍵點選 &7| &f查看第一頁'
+      - ' '
+    no-previous-page:
+      material: ARROW
+      name: '&f這是第一頁'
+      lore:
+      - ' '
+      - '&f  不能再往前翻了'
+      - ' '
+    next-page:
+      material: ARROW
+      name: '&f下一頁'
+      lore:
+      - ' '
+      - '  &e左鍵點選 &7| &f查看下一頁'
+      - '  &e右鍵點選 &7| &f查看最後一頁'
+      - ' '
+    no-next-page:
+      material: ARROW
+      name: '&f這是最後一頁'
+      lore:
+      - ' '
+      - '&f  不能再往後翻了'
+      - ' '
+
+gui:
+  open-sound: ENTITY_EXPERIENCE_ORB_PICKUP
+  click-sound: UI_BUTTON_CLICK
+  list:
+    title: '&a&l領地列表 &7(&f%(current_page)&7/%(total_page))'
+    items:
+      all:
+        material: CHEST
+        name: '&a&l所有領地'
+        lore:
+        - '&7'
+        - '&7所有公開的領地均已展示'
+        - '&7'
+        - '&e&l ▶ &l左鍵點選 &8|&f 查看私人領地'
+      owned:
+        material: PLAYER_HEAD
+        name: '&7領地擁有者>> &f%(owner)'
+        lore:
+        - '&7'
+        - '&e&l ▶ &l左鍵點選 &8|&f 查看所有領地'
+      sort-by-ratings:
+        material: LADDER
+        name: '&f以 &e&l領地評分 %(order) &f排序'
+        lore:
+        - '&7'
+        - '&f排序權重: %(order)'
+        - '&f目前選擇排序方式:'
+        - '&7 &a➥ &e&l領地評分'
+        - '&7     &f領地名稱'
+        - '&7     &f領地大小'
+        - ' '
+        - '&e&l ▶ &l左鍵點選 &8|&f 切換排序方式'
+        - '&e&l ▶ &l右鍵點選 &8|&f 切換排序權重'
+      sort-by-name:
+        material: LADDER
+        name: '&f以 &2&l領地名稱 %(order) &f排序'
+        lore:
+        - '&7'
+        - '&f排序權重: %(order)'
+        - '&f目前選擇排序方式:'
+        - '&7     &f領地評分'
+        - '&7 &a➥ &2&l領地名稱'
+        - '&7     &f領地大小'
+        - ' '
+        - '&e&l ▶ &l左鍵點選 &8|&f 切換排序方式'
+        - '&e&l ▶ &l右鍵點選 &8|&f 切換排序權重'
+      sort-by-size:
+        material: LADDER
+        name: '&f以 &d&l領地大小 %(order) &f排序'
+        lore:
+        - '&7'
+        - '&f排序權重: %(order)'
+        - '&f目前選擇排序方式:'
+        - '&7     &f領地評分'
+        - '&7     &f領地名稱'
+        - '&7  &a➥ &d&l領地大小'
+        - ' '
+        - '&e&l ▶ &l左鍵點選 &8|&f 切換排序方式'
+        - '&e&l ▶ &l右鍵點選 &8|&f 切換排序權重'
+    additional-lore:
+      normal:
+      - '&e&l ▶ &l左鍵點選 &8|&f 查看詳細資訊'
+      - '&e&l ▶ &l按下Ｑ鍵 &8|&f 置頂/取消置頂領地'
+      teleportable:
+      - '&e&l ▶ &l左鍵點選 &8|&f 查看詳細資訊'
+      - '&e&l ▶ &l右鍵點選 &8|&f 傳送到領地'
+      - '&e&l ▶ &l按下Ｑ鍵 &8|&f 置頂/取消置頂領地'
+  info:
+    title: '&a&l詳細資訊 &7#&f%(name)'
+    items:
+      back:
+        material: REDSTONE_TORCH
+        name: '&c返回'
+      owner:
+        material: PLAYER_HEAD
+        name: '&7領地擁有者>> &f%(owner)'
+        lore:
+        - '&7'
+        - '&e&l ▶ &l左鍵點選 &8|&f 查看該玩家所有領地'
+      teleport-to:
+        material: ENDER_EYE
+        name: '&d傳送到領地'
+        lore:
+        - '&7'
+        - '&7領地坐標:'
+        - '&f%(world)&7@&f%(x)&7,&f%(y),&f%(z)'
+        - ''
+        - '&e&l ▶ &l左鍵點選 &8|&f 傳送到領地'
+      teleport-disabled:
+        material: ENDER_EYE
+        name: '&d&m傳送到領地'
+        lore:
+        - '&7'
+        - '&c這個領地暫未開放傳送.'
+        - ''
+      rate:
+        material: WRITABLE_BOOK
+        name: '&e評分 & 評價'
+        lore:
+        - '&7'
+        - '&7你可以對該領地進行評價'
+        - '&7'
+        - '&e&l ▶ &l左鍵點選 &8|&f &a讚&f該領地並評價'
+        - '&e&l ▶ &l右鍵點選 &8|&f &c倒讚&f該領地並評價'
+      rated:
+        material: WRITTEN_BOOK
+        name: '&e評分 & 評價'
+        lore:
+        - '&7'
+        - '&7你已對該領地進行了評價::'
+        - '{&7- &f&o}#comment#'
+        - '&7評價時間 &f%(date)'
+        - ' '
+        - '&7你仍然可以更新你的評價'
+        - '&7'
+        - '&e&l ▶ &l左鍵點選 &8|&f &a讚&f該領地並評價'
+        - '&e&l ▶ &l右鍵點選 &8|&f &c倒讚&f該領地並評價'
+      empty:
+        material: BARRIER
+        name: '&7無評價'
+        lore:
+        - '&7目前暫時沒有評價'
+    additional-lore:
+      click:
+      - '&e&l ▶ &l左鍵點選 &8|&f 置頂/取消置頂領地'
+  manage:
+    title: '&a&l詳細資訊 &7#&f%(name)'
+    items:
+      back:
+        material: REDSTONE_TORCH
+        name: '&c返回'
+      teleport:
+        material: ENDER_EYE
+        name: '&d&l傳送'
+        lore:
+        - '&7'
+        - '&7領地坐標:'
+        - '&f%(world)&7@&f%(x)&7,&f%(y),&f%(z)'
+        - ''
+        - '&e&l ▶ &l左鍵點選 &8|&f 傳送到領地傳送點'
+        - '&e&l ▶ &l右鍵點選 &8|&f 設定目前所處位置為此領地傳送點'
+      information:
+        material: OAK_SIGN
+        name: '&e&l編輯領地資訊'
+        lore:
+        - ''
+        - '&e&l ▶ &l左鍵點選 &8|&f 設定領地暱稱(別名)'
+        - '&e&l ▶ &l右鍵點選 &8|&f 設定領地描述'
+        - '&e&l ▶ &l中鍵點選 &8|&f 設定領地圖標'
+      public:
+        material: LIME_DYE
+        name: '&7目前狀態: &a&l公開'
+        lore:
+        - ' '
+        - '&7現在所有的玩家都可以在公開列表內看到該領地.'
+        - ' '
+        - '&e&l ▶ &l左鍵點選 &8|&f 切換至 &c&l私有'
+      private:
+        material: GRAY_DYE
+        name: '&7目前狀態: &c&l私有'
+        lore:
+        - ' '
+        - '&7現在只有你能夠看到此領地'
+        - '&7其他玩家無法在公開列表看到該領地'
+        - ' '
+        - '&e&l ▶ &l左鍵點選 &8|&f 切換至 &a&l公開'
+      empty:
+        material: BARRIER
+        name: '&7無評論'
+        lore:
+        - '&7目前暫無評論'
+    additional-lore:
+      click:
+      - '&e&l ▶ &l左鍵點選 &8|&f 置頂/取消置頂'
+      remove:
+      - '&e&l ▶ &l左鍵點選 &8|&f 刪除該條評論 &c(管理員權限)'
+  admin:
+    title: '&a&l領地列表 &7(&f%(current_page)&7/%(total_page))'
+    items:
+      all:
+        material: CHEST
+        name: '&a&l所有領地'
+        lore:
+        - '&7'
+        - '&7所有公開的領地均已展示'
+        - '&7'
+        - '&e&l ▶ &l左鍵點選 &8|&f 查看私人領地'
+      owned:
+        material: PLAYER_HEAD
+        name: '&7領地擁有者>> &f%(owner)'
+        lore:
+        - '&7'
+        - '&e&l ▶ &l左鍵點選 &8|&f 查看所有領地'
+    additional-lore:
+      normal:
+      - '&e&l ▶ &l左鍵點選 &8|&f 查看詳細資訊'
+      teleportable:
+      - '&e&l ▶ &l左鍵點選 &8|&f 查看詳細資訊'
+      - '&e&l ▶ &l右鍵點選 &8|&f 傳送到領地'
+  select:
+    title: '&a&l請選擇一個領地圖標'
+    items:
+      select:
+        material: LIME_DYE
+        name: '&7在背包裡點選物品'
+        lore:
+        - ' '
+        - '&7請在背包裡點選物品圖標'
+        - ' '

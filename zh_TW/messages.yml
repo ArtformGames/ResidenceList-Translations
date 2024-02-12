@@ -1,0 +1,112 @@
+# ResidenceList
+
+# 適用插件版本：1.1.0+ (https://github.com/ArtformGames/ResidenceList/releases/tag/1.0.0)
+# 插件作者: ArtformGames, CarmJos (https://github.com/ArtformGames)
+# 專案地址: https://github.com/ArtformGames/ResidenceList
+
+# 繁體中文語言版本：1.0.1.1
+# 繁體中文語言工作：KoukeNeko
+# 語言專案地址：https://github.com/ArtformGames/ResidenceList-Translations
+
+# 載入失敗
+load-failed:
+- '&c&l抱歉! &f由於你的領地資料載入失敗，請嘗試重新加入或聯絡管理員!'
+
+# 指令提示
+command:
+  user:
+  - '&e&lResidenceList &f指令提示 &7(/reslist)'
+  - '&8#&f open &e[玩家]'
+  - '&8-&7 打開主頁面'
+  - '&8-&7 輸入玩家ID可指定打開該玩家的領地頁面'
+  - '&8#&f info &e<領地名稱>'
+  - '&8-&7 查看該領地的詳細資訊'
+  - '&8#&f edit &e<領地名稱>'
+  - '&8-&7 打開領地資訊編輯頁面'
+  admin:
+  - '&e&lResidenceList &f管理員指令提示 &7(/reslistadmin)'
+  - '&8#&f open &e[玩家]'
+  - '&8-&7 以管理員身份打開主界面'
+  - '&8-&7 輸入玩家ID可指定打開該玩家的領地頁面'
+  - '&8#&f edit &e<領地名稱>'
+  - '&8-&7 以管理員身份打開領地資訊編輯頁面'
+  - '&8#&f reload'
+  - '&8-&7 重新載入設定文件'
+  no-permission:
+  - '&c&l抱歉! &f你沒有權限這樣做!'
+  only-player:
+  - '&c&l抱歉! &f該指令只能由玩家執行!'
+  not-exists:
+  - '&c&l抱歉! &f沒有名稱為 &e#%(residence) &f的領地!'
+  unknown-player:
+  - '&c&l抱歉! &f沒有名稱為 &e#%(name) &f的玩家!'
+  not-owner:
+  - '&c&l抱歉! &f你不是領地 &e#%(residence) &f的主人!'
+
+# 重新載入
+reload:
+  # 開始
+  start:
+  - '&f正在重新載入設定文件...'
+  # 成功
+  success:
+  - '&a&l成功! &fResidenceList設定文件已重新載入, 耗時 &a%(time)&f 毫秒'
+  # 失敗
+  failed:
+  - '&c&l失敗! &fResidenceList設定文件重新載入失敗，請檢查控制台'
+
+# 置頂
+pin:
+  # 音效
+  sound: BLOCK_ANVIL_PLACE
+  message:
+  - '&f你成功置頂了領地 &e%(residence)&f!'
+
+# 取消置頂
+unpin:
+  sound: BLOCK_ANVIL_BREAK:0.5
+  message:
+  - '&f你取消置頂了領地 &e%(residence)&f!'
+
+# 傳送
+teleport:
+  sound: ENTITY_ENDERMAN_TELEPORT:0.5
+  no-location:
+  - '&c&l抱歉! &f你暫時無法傳送到領地 &e%(residence) '
+
+# 評價
+comment:
+  ask-sound: ENTITY_CHICKEN_EGG:0.5
+  yes-sound: ENTITY_VILLAGER_YES:0.5
+  no-sound: ENTITY_VILLAGER_NO:0.5
+  notify:
+  - '&f你正在評價領地 &e%(residence)&f,請在聊天欄輸入你的評價'
+  - '&f你可以輸入 ''&e#cancel&f'' 來取消評價'
+
+# 編輯
+edit:
+  # 編輯音效
+  edit-sound: ENTITY_CHICKEN_EGG:0.5
+  # 成功操作音效
+  success-sound: BLOCK_LEVER_CLICK:0.5
+  # 失敗操作音效
+  failed-sound: ENTITY_VILLAGER_NO:0.5
+  name:
+  - '&f你正在為領地 &e%(residence)&f設定別名, 請在聊天欄輸入'
+  - '&f別名長度 &e不能超過 16 個字元&f.'
+  - '&f你可以輸入 ''&e#cancel&f'' 來取消操作'
+  description:
+  - '&f你正在為領地 &e%(residence)&f編輯描述, 請在聊天欄輸入'
+  - '&f你可以使用 ''&e\\n&f'' 進行換行.'
+  - '&f你也可以輸入 ''&e#cancel&f'' 來取消操作'
+  name-too-long:
+  - '&c&l抱歉! &f領地別名過長,'
+  - '&f注意別名長度 &e不能超過 16 個字符&f'
+  name-updated:
+  - '&f成功為領地 &e%(residence)&f 更新了別名!'
+  description-updated:
+  - '&f成功為領地 &e%(residence)&f 更新了描述!'
+  icon-updated:
+  - '&f成功為領地 &e%(residence)&f 更新了圖標!'
+  icon-blocked:
+  - '&f你不能使用這個物品作為領地圖標!'
