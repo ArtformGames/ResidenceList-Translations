@@ -1,47 +1,31 @@
-# ResidenceList
 
-# 適用插件版本：1.1.0+ (https://github.com/ArtformGames/ResidenceList/releases/tag/1.0.0)
-# 插件作者: ArtformGames, CarmJos (https://github.com/ArtformGames)
-# 專案地址: https://github.com/ArtformGames/ResidenceList
 
-# 繁體中文語言版本：1.0.1.1
-# 繁體中文語言工作：KoukeNeko
-# 語言專案地址：https://github.com/ArtformGames/ResidenceList-Translations
-
-# 調試模式
-# 用於在控制台輸出插件執行詳細訊息
 debug: false
 
-# 數據統計設定-bStats
-# 這個選項用於幫助開發者統計插件使用情況, 並且幾乎完全不會影響伺服器效能
-# 您可以在 "plugins/bStats" 文件夾下修改設定關閉所有插件的bStats統計
-# 當然您可以在這裡單獨關閉本插件的bStats統計
+# Statistics Settings
+# This option is used to help developers count plug-in versions and usage, and it will never affect performance and user experience.
+# Of course, you can also choose to turn it off here for this plugin,
+# or turn it off for all plugins in the configuration file under "plugins/bStats".
 metrics: true
 
-# 檢查更新開關
-# 這個選項用於幫助您檢查本插件是否存在更新
-# 不想要此功能請設定為 false 
-# 檢查條目需要進行聯網操作，此操作是非同步執行的不會直接影響伺服器效能
+# Check update settings
+# This option is used by the plug-in to determine whether to check for updates.
+# If you do not want the plug-in to check for updates and prompt you, you can choose to close.
+# Checking for updates is an asynchronous operation that will never affect performance and user experience.
 check-update: true
 
 settings:
-  # 領地預設狀態 (公開 / 非公開)
+  # Default residence status (Public / Private)
   default-status: true
-  # 每一行文字數量
   letters-pre-line: 35
-  # 禁用的圖標
   blocked-icon-types:
   - CHEST
   - CHAIN
   - REDSTONE
 
-# 圖標設定
 icon:
-  # 單個領地詳細
   info:
-    # 物品ID
     material: GRASS_BLOCK
-    # 顯示名稱
     name: '&7# &f%(name)'
     lore:
     - '{  &f&o}#description#{1,1}'
@@ -50,13 +34,10 @@ icon:
     - '&7成員: &f%(members)'
     - '&7評分: &a%(likes) &7讚, &c%(dislikes) &7倒讚.'
     - '#click-lore#{1,0}'
-  # 選單空位裝飾
   empty:
     material: BLACK_STAINED_GLASS_PANE
     name: '&7  '
-  # 評分
   rate:
-    # 讚
     like:
       material: PLAYER_HEAD
       name: '&7來自 &f%(owner)'
@@ -65,7 +46,6 @@ icon:
       - '&7評價於 %(date)'
       - '&7這位玩家對此領地表示 &a&l讚'
       - '#click-lore#{1,0}'
-    # 倒讚  
     dislike:
       material: PLAYER_HEAD
       name: '&7From &f%(owner)'
@@ -75,9 +55,7 @@ icon:
       - '&7評價於 %(date)'
       - '&7這位玩家對此領地表示 &c&l倒讚'
       - '#click-lore#{1,0}'
-  # 頁碼    
   page:
-    # 上一頁
     previous-page:
       material: ARROW
       name: '&f上一頁'
@@ -86,7 +64,6 @@ icon:
       - '  &e左鍵點選 &7| &f查看上一頁'
       - '  &e右鍵點選 &7| &f查看第一頁'
       - ' '
-    # 首頁(沒有上一頁)  
     no-previous-page:
       material: ARROW
       name: '&f這是第一頁'
@@ -94,7 +71,6 @@ icon:
       - ' '
       - '&f  不能再往前翻了'
       - ' '
-    # 下一頁  
     next-page:
       material: ARROW
       name: '&f下一頁'
@@ -103,7 +79,6 @@ icon:
       - '  &e左鍵點選 &7| &f查看下一頁'
       - '  &e右鍵點選 &7| &f查看最後一頁'
       - ' '
-    # 末頁(沒有下一頁)  
     no-next-page:
       material: ARROW
       name: '&f這是最後一頁'
@@ -112,15 +87,10 @@ icon:
       - '&f  不能再往後翻了'
       - ' '
 
-# 操作界面設定
 gui:
-  # 開啟聲音
   open-sound: ENTITY_EXPERIENCE_ORB_PICKUP
-  # 點選聲音
   click-sound: UI_BUTTON_CLICK
-  # 領地列表
   list:
-    # 標題
     title: '&a&l領地列表 &7(&f%(current_page)&7/%(total_page))'
     items:
       all:
@@ -137,7 +107,6 @@ gui:
         lore:
         - '&7'
         - '&e&l ▶ &l左鍵點選 &8|&f 查看所有領地'
-      #根據領地評分排序
       sort-by-ratings:
         material: LADDER
         name: '&f以 &e&l領地評分 %(order) &f排序'
@@ -151,7 +120,6 @@ gui:
         - ' '
         - '&e&l ▶ &l左鍵點選 &8|&f 切換排序方式'
         - '&e&l ▶ &l右鍵點選 &8|&f 切換排序權重'
-      #根據領地名稱排序
       sort-by-name:
         material: LADDER
         name: '&f以 &2&l領地名稱 %(order) &f排序'
@@ -165,7 +133,6 @@ gui:
         - ' '
         - '&e&l ▶ &l左鍵點選 &8|&f 切換排序方式'
         - '&e&l ▶ &l右鍵點選 &8|&f 切換排序權重'
-      #根據領地大小排序
       sort-by-size:
         material: LADDER
         name: '&f以 &d&l領地大小 %(order) &f排序'
@@ -180,17 +147,15 @@ gui:
         - '&e&l ▶ &l左鍵點選 &8|&f 切換排序方式'
         - '&e&l ▶ &l右鍵點選 &8|&f 切換排序權重'
     additional-lore:
-      # 普通領地
       normal:
-      - '&e&l ▶ &l左鍵點選 &8|&f 查看詳細訊息'
+      - '&e&l ▶ &l左鍵點選 &8|&f 查看詳細資訊'
       - '&e&l ▶ &l按下Ｑ鍵 &8|&f 置頂/取消置頂領地'
-      # 可傳送的領地
       teleportable:
-      - '&e&l ▶ &l左鍵點選 &8|&f 查看詳細訊息'
+      - '&e&l ▶ &l左鍵點選 &8|&f 查看詳細資訊'
       - '&e&l ▶ &l右鍵點選 &8|&f 傳送到領地'
       - '&e&l ▶ &l按下Ｑ鍵 &8|&f 置頂/取消置頂領地'
   info:
-    title: '&a&l詳細訊息 &7#&f%(name)'
+    title: '&a&l詳細資訊 &7#&f%(name)'
     items:
       back:
         material: REDSTONE_TORCH
@@ -247,9 +212,8 @@ gui:
     additional-lore:
       click:
       - '&e&l ▶ &l左鍵點選 &8|&f 置頂/取消置頂領地'
-  # 玩家領地編輯頁面    
   manage:
-    title: '&a&l詳細訊息 &7#&f%(name)'
+    title: '&a&l詳細資訊 &7#&f%(name)'
     items:
       back:
         material: REDSTONE_TORCH
@@ -266,7 +230,7 @@ gui:
         - '&e&l ▶ &l右鍵點選 &8|&f 設定目前所處位置為此領地傳送點'
       information:
         material: OAK_SIGN
-        name: '&e&l編輯領地訊息'
+        name: '&e&l編輯領地資訊'
         lore:
         - ''
         - '&e&l ▶ &l左鍵點選 &8|&f 設定領地暱稱(別名)'
@@ -299,7 +263,6 @@ gui:
       - '&e&l ▶ &l左鍵點選 &8|&f 置頂/取消置頂'
       remove:
       - '&e&l ▶ &l左鍵點選 &8|&f 刪除該條評論 &c(管理員權限)'
-  # 管理員操作界面設定   
   admin:
     title: '&a&l領地列表 &7(&f%(current_page)&7/%(total_page))'
     items:
@@ -319,9 +282,9 @@ gui:
         - '&e&l ▶ &l左鍵點選 &8|&f 查看所有領地'
     additional-lore:
       normal:
-      - '&e&l ▶ &l左鍵點選 &8|&f 查看詳細訊息'
+      - '&e&l ▶ &l左鍵點選 &8|&f 查看詳細資訊'
       teleportable:
-      - '&e&l ▶ &l左鍵點選 &8|&f 查看詳細訊息'
+      - '&e&l ▶ &l左鍵點選 &8|&f 查看詳細資訊'
       - '&e&l ▶ &l右鍵點選 &8|&f 傳送到領地'
   select:
     title: '&a&l請選擇一個領地圖標'
