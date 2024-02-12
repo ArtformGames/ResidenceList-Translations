@@ -1,8 +1,18 @@
+# ResidenceList
 
+# 適用插件版本：1.1.0+ (https://github.com/ArtformGames/ResidenceList/releases/tag/1.0.0)
+# 插件作者: ArtformGames, CarmJos (https://github.com/ArtformGames)
+# 專案地址: https://github.com/ArtformGames/ResidenceList
+f
+# 繁體中文語言版本：1.0.1.1
+# 繁體中文語言工作：KoukeNeko
+# 語言專案地址：https://github.com/ArtformGames/ResidenceList-Translations
 
+# 載入失敗
 load-failed:
 - '&c&l抱歉! &f由於你的領地資料載入失敗，請嘗試重新加入或聯絡管理員!'
 
+# 指令提示
 command:
   user:
   - '&e&lResidenceList &f指令提示 &7(/reslist)'
@@ -33,29 +43,38 @@ command:
   not-owner:
   - '&c&l抱歉! &f你不是領地 &e#%(residence) &f的主人!'
 
+# 重新載入
 reload:
+  # 開始
   start:
   - '&f正在重新載入設定文件...'
+  # 成功
   success:
   - '&a&l成功! &fResidenceList設定文件已重新載入, 耗時 &a%(time)&f 毫秒'
+  # 失敗
   failed:
   - '&c&l失敗! &fResidenceList設定文件重新載入失敗，請檢查控制台'
 
+# 置頂
 pin:
+  # 音效
   sound: BLOCK_ANVIL_PLACE
   message:
   - '&f你成功置頂了領地 &e%(residence)&f!'
 
+# 取消置頂
 unpin:
   sound: BLOCK_ANVIL_BREAK:0.5
   message:
   - '&f你取消置頂了領地 &e%(residence)&f!'
 
+# 傳送
 teleport:
   sound: ENTITY_ENDERMAN_TELEPORT:0.5
   no-location:
   - '&c&l抱歉! &f你暫時無法傳送到領地 &e%(residence) '
 
+# 評價
 comment:
   ask-sound: ENTITY_CHICKEN_EGG:0.5
   yes-sound: ENTITY_VILLAGER_YES:0.5
@@ -64,9 +83,13 @@ comment:
   - '&f你正在評價領地 &e%(residence)&f,請在聊天欄輸入你的評價'
   - '&f你可以輸入 ''&e#cancel&f'' 來取消評價'
 
+# 編輯
 edit:
+  # 編輯音效
   edit-sound: ENTITY_CHICKEN_EGG:0.5
+  # 成功操作音效
   success-sound: BLOCK_LEVER_CLICK:0.5
+  # 失敗操作音效
   failed-sound: ENTITY_VILLAGER_NO:0.5
   name:
   - '&f你正在為領地 &e%(residence)&f設定別名, 請在聊天欄輸入'
