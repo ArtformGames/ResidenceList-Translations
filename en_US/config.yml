@@ -1,5 +1,3 @@
-
-
 debug: false
 
 # Statistics Settings
@@ -15,15 +13,23 @@ metrics: true
 check-update: true
 
 settings:
-  # Default residence status (Public / Private)
+  # Remove info data when failed to load.
+  #   true = Delete the info data, false = Only notify, keep the info data.
+  auto-remove: true
+  # Default residence status (Public = true / Private = false)
   default-status: true
+  # Allow residence owners to delete visitors' rates.
+  allow-owner-delete-rate: false
+  # How many letters are displayed per line in the residence description.
   letters-pre-line: 35
+  # The unsuitable icon types for the residence list.
   blocked-icon-types:
   - CHEST
-  - CHAIN
+  - IRON_CHAIN
   - REDSTONE
 
 icon:
+  # The icon of the residence list.
   info:
     material: GRASS_BLOCK
     name: '&7# &f%(name)'
@@ -88,8 +94,10 @@ icon:
       - ' '
 
 gui:
-  open-sound: ENTITY_EXPERIENCE_ORB_PICKUP
-  click-sound: UI_BUTTON_CLICK
+  # The sound played when the GUI is opened.
+  open-sound: ENTITY.EXPERIENCE_ORB.PICKUP
+  # The sound played when the player click the buttons in GUI.
+  click-sound: UI.BUTTON.CLICK
   list:
     title: '&a&lResidence list &7(&f%(current_page)&7/%(total_page))'
     items:
@@ -166,6 +174,11 @@ gui:
         lore:
         - '&7'
         - '&a ▶ Click &8|&f See all his residences'
+      server:
+        material: CREEPER_HEAD
+        name: '&e&oServer Residence'
+        lore:
+        - '&7'
       teleport-to:
         material: ENDER_EYE
         name: '&dTeleport to residence'
@@ -182,6 +195,27 @@ gui:
         - '&7'
         - '&cThis residence cannot be teleported to.'
         - ''
+      player:
+        material: PLAYER_HEAD
+        name: '&a%(name)'
+        lore:
+        - '&7'
+      members:
+        material: FURNACE
+        name: '&eMembers'
+        lore:
+        - '&7'
+        - '&7This residence has &f%(members) &7members.'
+        - '&7'
+        - '&a ▶ Click &8|&f See all members.'
+      rates:
+        material: COPPER_BLOCK
+        name: '&eRates'
+        lore:
+        - '&7'
+        - '&7This residence has &f%(size) &7rates.'
+        - '&7'
+        - '&a ▶ Click &8|&f See all rates.'
       rate:
         material: WRITABLE_BOOK
         name: '&eRate && Comment'
@@ -204,14 +238,16 @@ gui:
         - '&7'
         - '&a ▶ LClick &8|&f Like && comment.'
         - '&a ▶ RClick &8|&f Dislike && comment.'
+        - '&c ▶ Shift+Click &8|&f Remove your comment.'
+        book:
+          generation: ORIGINAL
       empty:
         material: BARRIER
         name: '&7Empty'
         lore:
         - '&7There are no comments yet.'
     additional-lore:
-      click:
-      - '&a ▶ Click &8|&f Pin/Unpin residence'
+      click: '&a ▶ Click &8|&f Pin/Unpin residence'
   manage:
     title: '&a&lDetails &7#&f%(name)'
     items:
@@ -235,7 +271,7 @@ gui:
         - ''
         - '&a ▶ LClick &8|&f Set residence''s nickname.'
         - '&a ▶ RClick &8|&f Set residence''s description.'
-        - '&a ▶ Middle &8|&f Edit residence''s icon'
+        - '&a ▶ Shift+Click &8|&f Edit residence''s icon'
       public:
         material: LIME_DYE
         name: '&7Current: &a&lPublic'
@@ -259,10 +295,8 @@ gui:
         lore:
         - '&7There are no comments yet.'
     additional-lore:
-      click:
-      - '&a ▶ LClick &8|&f Pin/Unpin residence'
-      remove:
-      - '&a ▶ LClick &8|&f Delete this comment &c(ADMIN)'
+      click: '&a ▶ LClick &8|&f Pin/Unpin residence'
+      remove: '&a ▶ LClick &8|&f Delete this comment &c(ADMIN)'
   admin:
     title: '&a&lResidence list &7(&f%(current_page)&7/%(total_page))'
     items:
@@ -281,8 +315,7 @@ gui:
         - '&7'
         - '&a ▶ Click &8|&f See all residences'
     additional-lore:
-      normal:
-      - '&a ▶ Click &8|&f View information'
+      normal: '&a ▶ Click &8|&f View information'
       teleportable:
       - '&a ▶ LClick &8|&f View information'
       - '&a ▶ RClick &8|&f Teleport to residence'
@@ -296,3 +329,4 @@ gui:
         - ' '
         - '&7Please click items in backpack to select icon.'
         - ' '
+
